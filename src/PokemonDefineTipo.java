@@ -14,7 +14,8 @@ public abstract class PokemonDefineTipo {
             System.out.println("3 - Água");
             System.out.println("4 - Grama");
             System.out.println("5 - Elétrico");
-            System.out.println("6 - Outro");
+            System.out.println("6 - Psiquico");
+            System.out.println("7 - Outro");
 
             System.out.print("Digite o número correspondente ao tipo: ");
             escolha = scanner.nextInt();
@@ -30,6 +31,8 @@ public abstract class PokemonDefineTipo {
                 case 5:
                     return "Eletrico";
                 case 6:
+                    return "Psiquico";
+                case 7:
                     return "Outro";
                 default:
                     System.out.println("Opção inválida. Por favor, tente novamente.");

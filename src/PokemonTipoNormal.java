@@ -1,7 +1,7 @@
 public class PokemonTipoNormal extends Pokemon{
 
-    public PokemonTipoNormal(String nome, String tipo, int level) {
-        super(nome, tipo, level);
+    public PokemonTipoNormal(String descricao, String nome, String tipo, int level) {
+        super(descricao, nome, tipo, level);
     }
 
     @Override

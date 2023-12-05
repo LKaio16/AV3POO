@@ -1,9 +1,10 @@
-public abstract class Pokemon implements PokemonAcoes{
+public abstract class Pokemon extends PokemonCaracteristicas implements PokemonAcoes {
     private String nome;
     private String tipo;
     private int level;
 
-    public Pokemon(String nome, String tipo, int level) {
+    public Pokemon(String descricao, String nome, String tipo, int level) {
+        super(descricao);
         this.nome = nome;
         this.tipo = tipo;
         this.level = level;

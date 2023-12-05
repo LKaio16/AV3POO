@@ -1,7 +1,9 @@
 public class PokemonTipoAgua extends Pokemon {
-    public PokemonTipoAgua(String nome, String tipo, int level) {
-        super(nome, tipo, level);
+
+    public PokemonTipoAgua(String descricao, String nome, String tipo, int level) {
+        super(descricao, nome, tipo, level);
     }
+
     @Override
     public void atacar() {
         System.out.println(getNome() + " Usou um Ataque de AGUA.");
