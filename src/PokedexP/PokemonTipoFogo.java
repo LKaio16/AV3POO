@@ -1,3 +1,5 @@
+package PokedexP;
+
 public class PokemonTipoFogo extends Pokemon {
 
 
@@ -7,7 +9,11 @@ public class PokemonTipoFogo extends Pokemon {
 
     @Override
     public void atacar() {
-        System.out.println(getNome() + " Usou um Ataque de FOGO.");
+        try {
+            System.out.println(getNome() + " Usou um Ataque de FOGO.");
+        }catch (NullPointerException e){
+            System.out.println("NENHUM POKEMON SELECIONADO");
+        }
     }
 
     @Override

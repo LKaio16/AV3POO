@@ -1,3 +1,5 @@
+package PokedexP;
+
 import java.util.Scanner;
 
 public abstract class PokemonDefineTipo {
@@ -8,7 +10,7 @@ public abstract class PokemonDefineTipo {
         int escolha;
 
         do {
-            System.out.println("Qual é o tipo do Pokemon que deseja adicionar?");
+            System.out.println("Qual é o tipo do PokedexP.Pokemon que deseja adicionar?");
             System.out.println("1 - Normal");
             System.out.println("2 - Fogo");
             System.out.println("3 - Água");

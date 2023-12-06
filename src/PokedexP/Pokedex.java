@@ -1,4 +1,7 @@
+package PokedexP;
+
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -11,15 +14,15 @@ public class Pokedex extends PokemonDefineTipo implements PokedexAcoes {
     }
 
     @Override
-    public void adicionarPokemon() {
+    public void adicionarPokemon() throws PokemonJaExistenteException,InputMismatchException {
+
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Digite o Nome do Pokemon:");
         String nome = scan.nextLine();
 
         if (verificaNome(nome)) {
-            System.out.println("Um Pokemon com o nome '" + nome + "' já existe na Pokedex.");
-            return;
+            throw new PokemonJaExistenteException(nome);
         }
 
         System.out.println("Digite o level do Pokemon");
@@ -85,7 +88,12 @@ public class Pokedex extends PokemonDefineTipo implements PokedexAcoes {
     }
 
     public Pokemon buscarPokemonPorOrdem(int posicao) {
-        return pokemons.get(posicao - 1);
+        try {
+            return pokemons.get(posicao - 1);
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Posição inválida. Nenhum Pokémon encontrado.");
+            return null;
+        }
     }
 
     @Override
@@ -94,11 +102,11 @@ public class Pokedex extends PokemonDefineTipo implements PokedexAcoes {
 
         for (Pokemon pokemon : pokemons) {
             System.out.println("---------------------------------------------------------");
-            System.out.println("Pokemon" + contador + "{" +
-                    "nome='" + pokemon.getNome() + '\'' +
-                    ", tipo='" + pokemon.getTipo() + '\'' +
-                    ", level=" + pokemon.getLevel() +
-                    '}');
+            System.out.println("Pokemon " + contador + "  || " +
+                    "Nome:" + pokemon.getNome() +
+                    " || Tipo='" + pokemon.getTipo() +
+                    " || Level=" + pokemon.getLevel() +
+                    " ||");
             contador++;
         }
     }

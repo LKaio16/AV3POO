@@ -1,3 +1,5 @@
+package PokedexP;
+
 public class PokemonTipoNormal extends Pokemon{
 
     public PokemonTipoNormal(String descricao, String nome, String tipo, int level) {
@@ -6,7 +8,11 @@ public class PokemonTipoNormal extends Pokemon{
 
     @Override
     public void atacar() {
-        System.out.println(getNome() + " Usou um Ataque NORMAL.");
+        try {
+            System.out.println(getNome() + " Usou um Ataque de NORMAL.");
+        }catch (NullPointerException e){
+            System.out.println("NENHUM POKEMON SELECIONADO");
+        }
     }
 
     @Override
