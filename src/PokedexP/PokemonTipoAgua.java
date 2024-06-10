@@ -1,6 +1,7 @@
 package PokedexP;
 
 public class PokemonTipoAgua extends Pokemon {
+    private static final long serialVersionUID = 8680538010825438246L;
     public PokemonTipoAgua(String descricao, String nome, String tipo, int level) {
         super(descricao, nome, tipo, level);
     }
