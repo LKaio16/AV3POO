@@ -1,5 +1,6 @@
 package PokedexP;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -118,6 +119,24 @@ public class Pokedex extends PokemonDefineTipo implements PokedexAcoes {
             }
         }
         return false;
+    }
+
+    public void salvaPokedex(ArrayList<Pokemon> pokemons) {
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("pokedex.dat"))) {
+            out.writeObject(pokemons);
+            System.out.println("Salvo");
+        } catch (IOException e) {
+            System.out.println("Erro ao salvar a Pokédex: " + e.getMessage());
+        }
+    }
+
+    public ArrayList<Pokemon> carregaPokedex() {
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("pokedex.dat"))) {
+            return (ArrayList<Pokemon>) in.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Erro ao carregar a Pokédex: " + e.getMessage());
+            return new ArrayList<>();
+        }
     }
 
 }

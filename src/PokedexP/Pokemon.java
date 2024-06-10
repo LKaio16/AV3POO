@@ -1,6 +1,8 @@
 package PokedexP;
 
-public abstract class Pokemon extends PokemonCaracteristicas implements PokemonAcoes {
+import java.io.Serializable;
+
+public abstract class Pokemon extends PokemonCaracteristicas implements PokemonAcoes, Serializable {
     private String nome;
     private String tipo;
     private int level;
@@ -12,6 +14,11 @@ public abstract class Pokemon extends PokemonCaracteristicas implements PokemonA
         this.level = level;
     }
 
+    public Pokemon() {
+        super();
+    }
+
+    private static final long serialVersionUID = 8680538010825438246L;
     @Override
     public void atacar() throws NullPointerException, PokemonNaoEncontradoException{
         try {

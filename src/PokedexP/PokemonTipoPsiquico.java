@@ -2,7 +2,7 @@ package PokedexP;
 
 public class PokemonTipoPsiquico extends Pokemon {
 
-
+    private static final long serialVersionUID = 8680538010825438246L;
     public PokemonTipoPsiquico(String descricao, String nome, String tipo, int level) {
         super(descricao, nome, tipo, level);
     }

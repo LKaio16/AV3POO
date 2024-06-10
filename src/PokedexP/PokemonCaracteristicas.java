@@ -12,6 +12,10 @@ public abstract class PokemonCaracteristicas {
         this.curiosidades = new HashMap<>();
     }
 
+    public PokemonCaracteristicas() {
+
+    }
+
     public void adicionarCuriosidade(String tipo, String curiosidade) {
         curiosidades.put(tipo, curiosidade);
     }

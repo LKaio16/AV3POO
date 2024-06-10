@@ -1,7 +1,14 @@
 package PokedexP;
 
-public class PokemonTipoNormal extends Pokemon{
+import java.io.Serializable;
 
+public class PokemonTipoNormal extends Pokemon implements Serializable {
+
+    private static final long serialVersionUID = 8680538010825438246L;
+
+    public PokemonTipoNormal() {
+        super();
+    }
     public PokemonTipoNormal(String descricao, String nome, String tipo, int level) {
         super(descricao, nome, tipo, level);
     }

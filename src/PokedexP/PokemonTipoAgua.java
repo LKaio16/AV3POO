@@ -14,8 +14,4 @@ public class PokemonTipoAgua extends Pokemon {
         }
     }
 
-    @Override
-    public void defender() {
-        super.defender();
-    }
 }
