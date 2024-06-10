@@ -1,6 +1,7 @@
 package PokedexP;
 
 public class PokemonTipoEletrico extends Pokemon {
+
     public PokemonTipoEletrico(String descricao, String nome, String tipo, int level) {
         super(descricao, nome, tipo, level);
     }

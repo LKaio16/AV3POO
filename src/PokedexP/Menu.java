@@ -1,5 +1,6 @@
 package PokedexP;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -22,6 +23,8 @@ public class Menu implements MenuAcoes {
             System.out.println("1 - Adicionar Pokemon ");
             System.out.println("2 - Listar Pokemons ");
             System.out.println("3 - Selecionar Pokemon");
+            System.out.println("20 - Salvar ");
+            System.out.println("21 - Carregar");
 
             if (pokemonSelecionado != null) {
                 System.out.println("-------- Usar " + pokemonSelecionado.getNome() + "---------");
@@ -151,7 +154,13 @@ public class Menu implements MenuAcoes {
                 case 10:
                     System.out.println("Obrigado por ultilizar?");
                     break;
+                case 20:
+                    pokedex.salvaPokedex((ArrayList<Pokemon>) pokedex.pokemons);
+                    break;
 
+                case 21:
+                    pokedex.pokemons = pokedex.carregaPokedex();
+                    break;
                 default:
                     System.out.println("Opção invalida");
 
